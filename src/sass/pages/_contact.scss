@@ -1,0 +1,35 @@
+.contact-form {
+  background-color: $color-bg;
+  padding: 3rem 1rem;
+
+  h1, p {
+    color: $color-primary;
+    text-align: center;
+  }
+
+  form {
+    background-color: $color-surface;
+    padding: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 10px rgba($color-primary, 0.05);
+
+    .form-label {
+      color: $color-primary;
+      font-weight: 500;
+    }
+
+    .form-control {
+      border-radius: 0.3rem;
+      border: 1px solid $color-secondary;
+
+      &:focus {
+        border-color: $color-primary;
+        box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.15);
+      }
+    }
+
+    .btn {
+      margin-top: 1rem;
+    }
+  }
+}

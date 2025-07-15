@@ -1,0 +1,28 @@
+.header {
+  background-color: $color-primary;
+  color: $color-text-light;
+
+  &__nav {
+    padding: 1rem 0;
+    background-color: $color-primary;
+
+    .navbar-brand,
+    .nav-link {
+      color: $color-text-light;
+      font-weight: 500;
+
+      &:hover,
+      &.active {
+        color: $color-accent;
+      }
+    }
+
+    .navbar-toggler {
+      border-color: $color-accent;
+
+      .navbar-toggler-icon {
+        background-image: none;
+      }
+    }
+  }
+}

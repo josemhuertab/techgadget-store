@@ -1,0 +1,25 @@
+// Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Bootstrap
+@import '../../node_modules/bootstrap/scss/bootstrap';
+
+// Base
+@import 'base/reset';
+@import 'base/typography';
+
+// Layout
+@import 'layout/header';
+@import 'layout/carrousel';
+@import 'layout/footer';
+@import 'layout/grid';
+
+// Components
+@import 'components/buttons';
+@import 'components/cards';
+
+// Pages
+@import 'pages/home';
+@import 'pages/products';
+@import 'pages/contact';

@@ -1,0 +1,23 @@
+.btn-primary {
+  background-color: $color-primary;
+  border-color: $color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-primary, 5%);
+    border-color: darken($color-primary, 5%);
+  }
+}
+
+.btn-light {
+  background-color: $color-accent;
+  border-color: $color-accent;
+  color: $color-primary;
+
+  &:hover,
+  &:focus {
+    background-color: darken($color-accent, 5%);
+    border-color: darken($color-accent, 5%);
+    color: $color-primary;
+  }
+}

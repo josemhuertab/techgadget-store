@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TechGadget Store | Productos</title>
+  <!-- Estilos compilados -->
+  <link rel="stylesheet" href="dist/styles.css" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <!-- Bootstrap JS -->
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+  <!-- Scripts personalizados -->
+  <script src="src/js/scripts.js" defer></script>
+</head>
+<body>
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">TechGadget Store</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="home.html" class="nav-link">Inicio</a></li>
+          <li class="nav-item"><a href="productos.html" class="nav-link active">Productos</a></li>
+          <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Header de productos ===== -->
+  <header class="hero bg-primary text-white text-center py-5">
+    <div class="container">
+      <h1 class="hero__title">Explora nuestra tienda de tecnología</h1>
+      <p class="hero__subtitle">Descubre gadgets y accesorios con la mejor calidad y precio.</p>
+    </div>
+  </header>
+
+  <!-- ===== Sección de productos ===== -->
+  <section class="container py-5 productos">
+    <div class="productos__grid" id="productosGrid">
+      <!-- Productos cargados dinámicamente con JS -->
+    </div>
+
+    <!-- Paginación 1 | 2 -->
+    <div class="productos__pagination">
+      <button class="btn btn-outline-primary" id="pagina1">1</button>
+      <button class="btn btn-outline-primary" id="pagina2">2</button>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="bg-light text-center text-lg-start mt-5">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
+          <h5 class="text-uppercase">TechGadget Store</h5>
+          <p>
+            TechGadget Store es tu tienda en línea de confianza para encontrar lo último en tecnología y gadgets de alta calidad a precios competitivos. Nos especializamos en ofrecer productos cuidadosamente seleccionados para mejorar tu día a día, desde accesorios para el hogar hasta tecnología portátil, siempre garantizando una experiencia de compra segura y sencilla.
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Enlaces rápidos</h5>
+          <ul class="list-unstyled mb-0">
+            <li><a href="home.html" class="text-dark">Inicio</a></li>
+            <li><a href="productos.html" class="text-dark">Productos</a></li>
+            <li><a href="contacto.html" class="text-dark">Contacto</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+          <h5 class="text-uppercase">Contacto</h5>
+          <p>Email: contacto@techgadgetstore.com</p>
+          <p>Tel: +56 9 1234 5678</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center p-3 bg-dark text-white">
+      © 2025 TechGadget Store. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>

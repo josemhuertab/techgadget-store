@@ -1,0 +1,27 @@
+.products-list {
+  background-color: $color-bg;
+  padding: 3rem 1rem;
+
+  h1, p {
+    color: $color-primary;
+    text-align: center;
+  }
+
+  .card {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba($color-primary, 0.1);
+    }
+
+    .card-title {
+      color: $color-primary;
+      font-weight: 600;
+    }
+
+    .card-text {
+      color: $color-text;
+    }
+  }
+}
