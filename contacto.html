@@ -26,36 +26,50 @@
 
   <!-- Título -->
   <header class="text-center py-5 bg-primary text-white">
-    <h1>Contáctanos</h1>
-    <p>¿Tienes dudas? Completa el formulario y te responderemos a la brevedad.</p>
+    <div class="container">
+      <h1>Contáctanos</h1>
+      <p>¿Tienes dudas? Completa el formulario y te responderemos a la brevedad.</p>
+    </div>
   </header>
 
   <!-- Formulario de contacto -->
   <section class="contact-form py-5">
     <div class="container">
-      <form class="mx-auto" style="max-width: 600px;">
+      <!-- Contenedor para mostrar alertas -->
+      <div id="contactAlertContainer"></div>
+
+      <form class="mx-auto" style="max-width: 600px;" id="contactForm">
         <div class="mb-3">
           <label for="name" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="name" placeholder="Tu nombre">
+          <input type="text" class="form-control" id="name" placeholder="Tu nombre" required>
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Correo electrónico</label>
-          <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+          <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
         </div>
         <div class="mb-3">
           <label for="message" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+          <textarea class="form-control" id="message" rows="4" placeholder="Escribe tu mensaje aquí..." required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Enviar Mensaje</button>
       </form>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    &copy; 2025 TechGadget Store. Todos los derechos reservados.
-  </footer>
+<!-- Footer -->
+<footer class="footer mt-5">
+  <div class="container">
+    <h5>TechGadget Store</h5>
+    <p>Tu tienda de tecnología de confianza con lo último en gadgets y accesorios de calidad.</p>
+    <p>Email: contacto@techgadgetstore.com | Tel: +56 9 1234 5678</p>
+  </div>
+  <div class="footer__bottom">
+    © 2025 TechGadget Store. Todos los derechos reservados.
+  </div>
+</footer>
+
 
   <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="src/js/scripts.js" defer></script>
 </body>
 </html>
