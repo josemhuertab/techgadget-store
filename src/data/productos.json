@@ -1,61 +1,61 @@
 [
   {
-    "img": "src/img/productos/audifonos-inalambricos-1.jpg",
+    "img": "../src/img/productos/audifonos-inalambricos-1.jpg",
     "nombre": "Audífonos Bluetooth",
     "desc": "Audífonos de alta calidad, ideales para actividades al aire libre con conexión inalámbrica."
   },
   {
-    "img": "src/img/productos/audifonos-compactos.jpg",
+    "img": "../src/img/productos/audifonos-compactos.jpg",
     "nombre": "Audífonos Bluetooth Compactos",
     "desc": "Libertad de movimiento con sonido envolvente."
   },
   {
-    "img": "src/img/productos/mouse-rgb.jpg",
+    "img": "../src/img/productos/mouse-rgb.jpg",
     "nombre": "Mouse RGB",
     "desc": "Mouse con iluminación RGB, perfecto para gaming y trabajo."
   },
   {
-    "img": "src/img/productos/teclado-rgb-1.jpg",
+    "img": "../src/img/productos/teclado-rgb-1.jpg",
     "nombre": "Teclado Mecánico RGB",
     "desc": "Teclado mecánico ideal para oficina y gaming con retroiluminación."
   },
   {
-    "img": "src/img/productos/cargador-inalambrico.jpg",
+    "img": "../src/img/productos/cargador-inalambrico.jpg",
     "nombre": "Cargador Inalámbrico",
     "desc": "Carga rápida y cómoda para tus dispositivos."
   },
   {
-    "img": "src/img/productos/drone-compacto.jpg",
+    "img": "../src/img/productos/drone-compacto.jpg",
     "nombre": "Drone Compacto",
     "desc": "Drone de fotografía aérea fácil de manejar y con buena autonomía."
   },
   {
-    "img": "src/img/productos/audifonos-inalambricos-2.jpg",
+    "img": "../src/img/productos/audifonos-inalambricos-2.jpg",
     "nombre": "Audífonos Inalámbricos Pro",
     "desc": "Sonido de alta fidelidad para disfrutar música en cualquier lugar."
   },
   {
-    "img": "src/img/productos/monitor-full-led-hd.jpg",
+    "img": "../src/img/productos/monitor-full-led-hd.jpg",
     "nombre": "Monitor LED Full HD",
     "desc": "Pantalla con imágenes nítidas y claras para trabajo o entretenimiento."
   },
   {
-    "img": "src/img/productos/mouse-rgb-inalambrico.jpg",
+    "img": "../src/img/productos/mouse-rgb-inalambrico.jpg",
     "nombre": "Mouse Inalámbrico",
     "desc": "Precisión y comodidad para tus tareas diarias."
   },
   {
-    "img": "src/img/productos/tablet.jpg",
+    "img": "../src/img/productos/tablet.jpg",
     "nombre": "Tablet 10 pulgadas",
     "desc": "Ideal para estudiar, trabajar o entretenerse en cualquier lugar."
   },
   {
-    "img": "src/img/productos/auriculares-gaming.jpg",
+    "img": "../src/img/productos/auriculares-gaming.jpg",
     "nombre": "Auriculares Gaming",
     "desc": "Sumérgete en tus juegos con sonido envolvente y micrófono integrado."
   },
   {
-    "img": "src/img/productos/camara-web-hd.jpg",
+    "img": "../src/img/productos/camara-web-hd.jpg",
     "nombre": "Cámara Web HD",
     "desc": "Videollamadas con calidad de imagen clara y nítida."
   }
