@@ -1,25 +1,28 @@
-// Abstracts
+// ===== Abstracts =====
 @import 'abstracts/variables';
 @import 'abstracts/mixins';
 
-// Bootstrap
+// ===== Bootstrap =====
 @import '../../node_modules/bootstrap/scss/bootstrap';
 
-// Base
+// ===== Base =====
 @import 'base/reset';
 @import 'base/typography';
+@import 'base/animations';
 
-// Layout
+// ===== Layout =====
 @import 'layout/header';
-@import 'layout/carrousel';
 @import 'layout/footer';
 @import 'layout/grid';
+@import 'layout/carrousel';
 
-// Components
+// ===== Components =====
 @import 'components/buttons';
 @import 'components/cards';
+@import 'components/links';
 
-// Pages
+// ===== Pages =====
 @import 'pages/home';
 @import 'pages/products';
 @import 'pages/contact';
+@import 'pages/faq';

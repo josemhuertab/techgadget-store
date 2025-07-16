@@ -1,35 +1,65 @@
 .contact-form {
   background-color: $color-bg;
-  padding: 3rem 1rem;
-
-  h1, p {
-    color: $color-primary;
-    text-align: center;
-  }
+  padding: 4rem 0;
 
   form {
     background-color: $color-surface;
     padding: 2rem;
-    border-radius: 0.5rem;
-    box-shadow: 0 4px 10px rgba($color-primary, 0.05);
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 12px rgba($color-primary, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
 
-    .form-label {
+    label {
       color: $color-primary;
-      font-weight: 500;
+      font-weight: 600;
     }
 
-    .form-control {
-      border-radius: 0.3rem;
-      border: 1px solid $color-secondary;
+    input,
+    textarea {
+      border: 1px solid lighten($color-primary, 40%);
+      transition: border-color 0.3s;
 
       &:focus {
-        border-color: $color-primary;
-        box-shadow: 0 0 0 0.2rem rgba($color-primary, 0.15);
+        border-color: $color-secondary;
+        box-shadow: 0 0 5px rgba($color-secondary, 0.5);
+        outline: none;
       }
     }
 
-    .btn {
-      margin-top: 1rem;
+    button.btn-primary {
+      width: 100%;
+      background-color: $color-secondary;
+      border: none;
+      padding: 0.75rem;
+      font-weight: 700;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $color-accent;
+      }
     }
   }
+}
+
+header {
+  background: linear-gradient(135deg, $color-primary, $color-secondary);
+  color: $color-text-light;
+  padding: 3rem 0;
+
+  h1 {
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    opacity: 0.85;
+  }
+}
+
+footer {
+  background-color: $color-primary;
+  color: $color-text-light;
+  padding: 1rem 0;
+  font-size: 0.9rem;
 }

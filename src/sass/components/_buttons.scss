@@ -1,23 +1,18 @@
 .btn-primary {
-  background-color: $color-primary;
-  border-color: $color-primary;
+  background: $gradient-primary;
+  border: none;
+  color: $color-text-light;
+  font-weight: 600;
+  transition: background 0.4s ease, box-shadow 0.3s ease, transform 0.3s ease;
 
-  &:hover,
-  &:focus {
-    background-color: darken($color-primary, 5%);
-    border-color: darken($color-primary, 5%);
+  &:hover {
+    background: $gradient-accent;
+    box-shadow: 0 6px 12px rgba($color-accent, 0.4);
+    transform: translateY(-2px);
   }
-}
 
-.btn-light {
-  background-color: $color-accent;
-  border-color: $color-accent;
-  color: $color-primary;
-
-  &:hover,
-  &:focus {
-    background-color: darken($color-accent, 5%);
-    border-color: darken($color-accent, 5%);
-    color: $color-primary;
+  &:focus, &:active {
+    background: $gradient-accent;
+    box-shadow: 0 0 0 0.2rem rgba($color-accent, 0.5);
   }
 }
