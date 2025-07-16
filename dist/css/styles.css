@@ -11854,11 +11854,6 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-html, body {
-  overflow-x: hidden;
-  height: 100%;
-}
-
 body {
   background-color: #F7FAFC;
   color: #1B262C;
@@ -12033,7 +12028,6 @@ body.fade-in {
   background: linear-gradient(135deg, #00BFA6 0%, #32E0C4 100%);
   box-shadow: 0 6px 12px rgba(0, 191, 166, 0.5);
 }
-
 .carrito-btn {
   position: fixed;
   bottom: 20px;
@@ -12153,6 +12147,7 @@ body.fade-in {
     font-size: 1.3rem;
   }
 }
+
 a {
   color: #0D3B66;
   text-decoration: none;
@@ -12347,5 +12342,3 @@ footer {
   color: #1B262C;
   transition: background-color 0.3s ease;
 }
-
-/*# sourceMappingURL=styles.css.map */
