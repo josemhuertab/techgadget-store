@@ -1,20 +1,19 @@
-// Suscripción con alerta de éxito y autocierre
 document.addEventListener('DOMContentLoaded', function () {
-  const form = document.getElementById('subscriptionForm');
-  const emailInput = document.getElementById('subscriptionEmail');
+  // === SUSCRIPCIÓN CON ALERTA ===
+  const subscriptionForm = document.getElementById('subscriptionForm');
   const alertContainer = document.getElementById('alertContainer');
 
-  if (form) {
-    form.addEventListener('submit', function (e) {
+  if (subscriptionForm) {
+    subscriptionForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
       alertContainer.innerHTML = `
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-          ¡Gracias por suscribirte, te mantendremos informado con nuestras mejores ofertas!
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+          ¡Gracias por suscribirte! Te mantendremos informado.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
         </div>`;
 
-      form.reset();
+      subscriptionForm.reset();
 
       setTimeout(() => {
         const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
@@ -22,47 +21,94 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 3000);
     });
   }
-});
 
-document.addEventListener('DOMContentLoaded', function () {
-  // Productos de ejemplo
-  const productos = [
-    { img: 'src/img/productos/producto-1.jpg', nombre: 'Auriculares Bluetooth', desc: 'Alta calidad de sonido.' },
-    { img: 'src/img/productos/producto-2.jpg', nombre: 'Smartwatch', desc: 'Controla tu día a día.' },
-    { img: 'src/img/productos/producto-3.jpg', nombre: 'Cámara de Seguridad', desc: 'Vigila tu hogar.' },
-    { img: 'src/img/productos/producto-4.jpg', nombre: 'Teclado Mecánico', desc: 'Ideal para trabajo y gaming.' },
-    { img: 'src/img/productos/producto-5.jpg', nombre: 'Cargador Inalámbrico', desc: 'Carga rápida y cómoda.' },
-    { img: 'src/img/productos/producto-6.jpg', nombre: 'Drone Compacto', desc: 'Fotografía aérea fácil.' },
-    { img: 'src/img/productos/producto-7.jpg', nombre: 'Altavoz Inteligente', desc: 'Asistente virtual en casa.' },
-    { img: 'src/img/productos/producto-8.jpg', nombre: 'Monitor LED', desc: 'Imágenes nítidas y claras.' },
-    { img: 'src/img/productos/producto-9.jpg', nombre: 'Mouse Inalámbrico', desc: 'Preciso y cómodo.' },
-    { img: 'src/img/productos/producto-10.jpg', nombre: 'Tablet 10"', desc: 'Ideal para estudio y ocio.' },
-    { img: 'src/img/productos/producto-11.jpg', nombre: 'Auriculares Gaming', desc: 'Sumérgete en tus juegos.' },
-    { img: 'src/img/productos/producto-12.jpg', nombre: 'Cámara Web HD', desc: 'Videollamadas de calidad.' }
-  ];
+  // === CONTACTO CON ALERTA ===
+  const contactForm = document.getElementById('contactForm');
+  const contactAlertContainer = document.getElementById('contactAlertContainer');
 
-  const grid = document.getElementById('productosGrid');
-  const pagina1 = document.getElementById('pagina1');
-  const pagina2 = document.getElementById('pagina2');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
 
-  function mostrarPagina(num) {
-    grid.innerHTML = '';
-    const inicio = (num - 1) * 6;
-    const fin = inicio + 6;
-    productos.slice(inicio, fin).forEach(p => {
-      grid.innerHTML += `
-        <div class="productos__card">
-          <img src="${p.img}" alt="${p.nombre}">
-          <h5>${p.nombre}</h5>
-          <p>${p.desc}</p>
-          <button class="btn btn-primary">Agregar al carrito</button>
+      contactAlertContainer.innerHTML = `
+        <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+          ¡Gracias por tu mensaje! Te responderemos pronto.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
         </div>`;
+
+      contactForm.reset();
+
+      setTimeout(() => {
+        const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
+        alert.close();
+      }, 3000);
     });
   }
+// ANIMACIÓN FADE RÁPIDA EN EL BODY
+  document.body.classList.add('fade-in');
 
-  // Inicializa en página 1
-  mostrarPagina(1);
+  // === ANIMACIÓN FADE EN MAIN ===
+  const main = document.querySelector('main');
+  if (main) {
+    main.classList.add('fade-in');
+  }
 
-  pagina1.addEventListener('click', () => mostrarPagina(1));
-  pagina2.addEventListener('click', () => mostrarPagina(2));
+  // === CARGA Y PAGINACIÓN DE PRODUCTOS ===
+  const productosGrid = document.getElementById('productosGrid');
+  const pagina1Btn = document.getElementById('pagina1');
+  const pagina2Btn = document.getElementById('pagina2');
+
+  if (productosGrid) {
+    let productosData = [];
+
+    function cargarProductos(pagina) {
+      productosGrid.innerHTML = '';
+      const inicio = (pagina === 1) ? 0 : 9;
+      const fin = (pagina === 1) ? 9 : 12;
+      const productosMostrar = productosData.slice(inicio, fin);
+
+      productosMostrar.forEach(producto => {
+        const card = document.createElement('div');
+        card.classList.add('col-md-4');
+
+        card.innerHTML = `
+          <div class="card h-100">
+            <img src="${producto.img}" class="card-img-top" alt="${producto.nombre}">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">${producto.nombre}</h5>
+              <p class="card-text">${producto.desc}</p>
+              <a href="#" class="btn btn-primary mt-auto">Comprar</a>
+            </div>
+          </div>
+        `;
+
+        productosGrid.appendChild(card);
+      });
+    }
+
+    fetch('src/data/productos.json')
+      .then(response => response.json())
+      .then(data => {
+        productosData = data;
+        cargarProductos(1); // Mostrar los primeros 9 productos al cargar
+      })
+      .catch(error => {
+        console.error('Error al cargar productos:', error);
+        productosGrid.innerHTML = `<p class="text-danger">No se pudieron cargar los productos. Inténtalo nuevamente más tarde.</p>`;
+      });
+
+    if (pagina1Btn && pagina2Btn) {
+      pagina1Btn.addEventListener('click', () => {
+        cargarProductos(1);
+        pagina1Btn.classList.add('active');
+        pagina2Btn.classList.remove('active');
+      });
+
+      pagina2Btn.addEventListener('click', () => {
+        cargarProductos(2);
+        pagina2Btn.classList.add('active');
+        pagina1Btn.classList.remove('active');
+      });
+    }
+  }
 });
