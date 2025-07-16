@@ -1,25 +1,17 @@
-// Light mode colors
-$color-bg: #EAEFEF;
-$color-surface: #ffffff;
-$color-primary: #333446;
-$color-secondary: #7F8CAA;
-$color-accent: #B8CFCE;
-$color-text: #333446;
-$color-text-light: #ffffff;
+// Colors
+$color-bg: #F7FAFC;
+$color-surface: #FFFFFF;
+$color-primary: #0D3B66;
+$color-secondary: #1282A2;
+$color-accent: #00BFA6;
+$color-text: #1B262C;
+$color-text-light: #FFFFFF;
+$color-muted: #4F6D7A;
 
-// Dark mode colors
-$dark-color-bg: #333446;
-$dark-color-surface: #444654;
-$dark-color-primary: #EAEFEF;
-$dark-color-secondary: #B8CFCE;
-$dark-color-accent: #7F8CAA;
+// Gradients
+$gradient-primary: linear-gradient(135deg, #0D3B66 0%, #1282A2 100%);
+$gradient-accent: linear-gradient(135deg, #00BFA6 0%, #32E0C4 100%);
 
 // Typography
 $font-family-base: 'Roboto', sans-serif;
 $font-size-base: 1rem;
-
-// Bootstrap color overrides
-$primary: $color-primary;
-$secondary: $color-secondary;
-$light: $color-bg;
-$dark: $color-primary;
