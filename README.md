@@ -55,6 +55,7 @@ techgadget-store/
 │  └── themes/
 │
 ├── .gitignore
+├── index.html (para redireccionamiento)
 ├── package-lock.json
 ├── package.json
 └── README.md
