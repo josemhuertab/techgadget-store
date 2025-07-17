@@ -13,7 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>`;
       subscriptionForm.reset();
       setTimeout(() => {
-        const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
+        const alert = bootstrap.Alert.getOrCreateInstance(
+          document.querySelector(".alert")
+        );
         alert.close();
       }, 3000);
     });
@@ -21,7 +23,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // === CONTACTO CON ALERTA ===
   const contactForm = document.getElementById("contactForm");
-  const contactAlertContainer = document.getElementById("contactAlertContainer");
+  const contactAlertContainer = document.getElementById(
+    "contactAlertContainer"
+  );
 
   if (contactForm && contactAlertContainer) {
     contactForm.addEventListener("submit", function (e) {
@@ -33,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function () {
         </div>`;
       contactForm.reset();
       setTimeout(() => {
-        const alert = bootstrap.Alert.getOrCreateInstance(contactAlertContainer.querySelector(".alert"));
+        const alert = bootstrap.Alert.getOrCreateInstance(
+          contactAlertContainer.querySelector(".alert")
+        );
         alert.close();
       }, 3000);
     });
@@ -257,36 +263,56 @@ document.addEventListener("click", (e) => {
   }
 });
 
+const darkModeToggle = document.getElementById("darkModeToggle");
+  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+  // Cargar preferencia previa
+  if (
+    localStorage.getItem("dark-mode") === "enabled" ||
+    (!localStorage.getItem("dark-mode") && prefersDarkScheme.matches)
+  ) {
+    document.body.classList.add("dark-mode");
+  }
+
+  darkModeToggle?.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    if (document.body.classList.contains("dark-mode")) {
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  });
+
 // === INICIALIZAR BADGE DEL CARRITO AL CARGAR ===
 actualizarNotificacionCarrito();
 // ANIMACIÓN FADE RÁPIDA EN EL BODY
-  document.body.classList.add('fade-in');
+document.body.classList.add("fade-in");
 
-  // === ANIMACIÓN FADE EN MAIN ===
-  const main = document.querySelector('main');
-  if (main) {
-    main.classList.add('fade-in');
-  }
+// === ANIMACIÓN FADE EN MAIN ===
+const main = document.querySelector("main");
+if (main) {
+  main.classList.add("fade-in");
+}
 
-  // === CARGA Y PAGINACIÓN DE PRODUCTOS ===
-  const productosGrid = document.getElementById('productosGrid');
-  const pagina1Btn = document.getElementById('pagina1');
-  const pagina2Btn = document.getElementById('pagina2');
+// === CARGA Y PAGINACIÓN DE PRODUCTOS ===
+const productosGrid = document.getElementById("productosGrid");
+const pagina1Btn = document.getElementById("pagina1");
+const pagina2Btn = document.getElementById("pagina2");
 
-  if (productosGrid) {
-    let productosData = [];
+if (productosGrid) {
+  let productosData = [];
 
-    function cargarProductos(pagina) {
-      productosGrid.innerHTML = '';
-      const inicio = (pagina === 1) ? 0 : 9;
-      const fin = (pagina === 1) ? 9 : 12;
-      const productosMostrar = productosData.slice(inicio, fin);
+  function cargarProductos(pagina) {
+    productosGrid.innerHTML = "";
+    const inicio = pagina === 1 ? 0 : 9;
+    const fin = pagina === 1 ? 9 : 12;
+    const productosMostrar = productosData.slice(inicio, fin);
 
-      productosMostrar.forEach(producto => {
-        const card = document.createElement('div');
-        card.classList.add('col-md-4');
+    productosMostrar.forEach((producto) => {
+      const card = document.createElement("div");
+      card.classList.add("col-md-4");
 
-        card.innerHTML = `
+      card.innerHTML = `
           <div class="card h-100">
             <img src="${producto.img}" class="card-img-top" alt="${producto.nombre}">
             <div class="card-body d-flex flex-column">
@@ -297,32 +323,32 @@ actualizarNotificacionCarrito();
           </div>
         `;
 
-        productosGrid.appendChild(card);
-      });
-    }
-
-    fetch('../src/data/productos.json')
-      .then(response => response.json())
-      .then(data => {
-        productosData = data;
-        cargarProductos(1); // Mostrar los primeros 9 productos al cargar
-      })
-      .catch(error => {
-        console.error('Error al cargar productos:', error);
-        productosGrid.innerHTML = `<p class="text-danger">No se pudieron cargar los productos. Inténtalo nuevamente más tarde.</p>`;
-      });
-
-    if (pagina1Btn && pagina2Btn) {
-      pagina1Btn.addEventListener('click', () => {
-        cargarProductos(1);
-        pagina1Btn.classList.add('active');
-        pagina2Btn.classList.remove('active');
-      });
-
-      pagina2Btn.addEventListener('click', () => {
-        cargarProductos(2);
-        pagina2Btn.classList.add('active');
-        pagina1Btn.classList.remove('active');
-      });
-    }
+      productosGrid.appendChild(card);
+    });
   }
+
+  fetch("../src/data/productos.json")
+    .then((response) => response.json())
+    .then((data) => {
+      productosData = data;
+      cargarProductos(1); // Mostrar los primeros 9 productos al cargar
+    })
+    .catch((error) => {
+      console.error("Error al cargar productos:", error);
+      productosGrid.innerHTML = `<p class="text-danger">No se pudieron cargar los productos. Inténtalo nuevamente más tarde.</p>`;
+    });
+
+  if (pagina1Btn && pagina2Btn) {
+    pagina1Btn.addEventListener("click", () => {
+      cargarProductos(1);
+      pagina1Btn.classList.add("active");
+      pagina2Btn.classList.remove("active");
+    });
+
+    pagina2Btn.addEventListener("click", () => {
+      cargarProductos(2);
+      pagina2Btn.classList.add("active");
+      pagina1Btn.classList.remove("active");
+    });
+  }
+}
