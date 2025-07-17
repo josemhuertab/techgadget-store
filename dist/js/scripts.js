@@ -6,27 +6,12 @@ document.addEventListener("DOMContentLoaded", function () {
   if (subscriptionForm) {
     subscriptionForm.addEventListener("submit", function (e) {
       e.preventDefault();
-=======
-document.addEventListener('DOMContentLoaded', function () {
-  // === SUSCRIPCIÓN CON ALERTA ===
-  const subscriptionForm = document.getElementById('subscriptionForm');
-  const alertContainer = document.getElementById('alertContainer');
-
-  if (subscriptionForm) {
-    subscriptionForm.addEventListener('submit', function (e) {
-      e.preventDefault();
       alertContainer.innerHTML = `
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
           <strong>¡Gracias por suscribirte!</strong> Te mantendremos informado sobre nuestras promociones y ofertas.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
         </div>`;
       subscriptionForm.reset();
-      setTimeout(() => {
-        const alert = bootstrap.Alert.getOrCreateInstance(
-          document.querySelector(".alert")
-        );
-      subscriptionForm.reset();
-
       setTimeout(() => {
         const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
         alert.close();
@@ -36,42 +21,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // === CONTACTO CON ALERTA ===
   const contactForm = document.getElementById("contactForm");
-  const contactAlertContainer = document.getElementById(
-    "contactAlertContainer"
-  );
+  const contactAlertContainer = document.getElementById("contactAlertContainer");
 
   if (contactForm && contactAlertContainer) {
-    // <== aquí agregamos la condición
     contactForm.addEventListener("submit", function (e) {
       e.preventDefault();
       contactAlertContainer.innerHTML = `
-      <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-        <strong>¡Gracias por escribirnos!</strong> Nos pondremos en contacto contigo a la brevedad posible.
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
-      </div>`;
-      contactForm.reset();
-      setTimeout(() => {
-        const alert = bootstrap.Alert.getOrCreateInstance(
-          contactAlertContainer.querySelector(".alert")
-        );
-=======
-  const contactForm = document.getElementById('contactForm');
-  const contactAlertContainer = document.getElementById('contactAlertContainer');
-
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      contactAlertContainer.innerHTML = `
         <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
-          <strong>¡Gracias por contactarnos!</strong> Nos pondremos en contacto contigo a la brevedad posible.
+          <strong>¡Gracias por escribirnos!</strong> Nos pondremos en contacto contigo a la brevedad posible.
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar"></button>
         </div>`;
-
       contactForm.reset();
-
       setTimeout(() => {
-        const alert = bootstrap.Alert.getOrCreateInstance(document.querySelector('.alert'));
+        const alert = bootstrap.Alert.getOrCreateInstance(contactAlertContainer.querySelector(".alert"));
         alert.close();
       }, 3000);
     });
@@ -297,7 +259,6 @@ document.addEventListener("click", (e) => {
 
 // === INICIALIZAR BADGE DEL CARRITO AL CARGAR ===
 actualizarNotificacionCarrito();
-=======
 // ANIMACIÓN FADE RÁPIDA EN EL BODY
   document.body.classList.add('fade-in');
 
@@ -365,4 +326,3 @@ actualizarNotificacionCarrito();
       });
     }
   }
-});
