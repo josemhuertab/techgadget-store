@@ -64,7 +64,6 @@ document.addEventListener("DOMContentLoaded", function () {
     carritoNotificacion.style.display = totalCantidad > 0 ? "flex" : "none";
     carritoNotificacion.textContent = totalCantidad;
   }
-
   function cargarCarrito() {
     carritoItemsContainer.innerHTML = "";
     const carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -286,7 +285,10 @@ const darkModeToggle = document.getElementById("darkModeToggle");
 // === INICIALIZAR BADGE DEL CARRITO AL CARGAR ===
 actualizarNotificacionCarrito();
 // ANIMACIÓN FADE RÁPIDA EN EL BODY
-document.body.classList.add("fade-in");
+requestAnimationFrame(() => {
+  document.body.classList.add("fade-in");
+});
+
 
 // === ANIMACIÓN FADE EN MAIN ===
 const main = document.querySelector("main");
