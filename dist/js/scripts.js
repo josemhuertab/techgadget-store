@@ -263,24 +263,24 @@ document.addEventListener("click", (e) => {
 });
 
 const darkModeToggle = document.getElementById("darkModeToggle");
-  const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-  // Cargar preferencia previa
-  if (
-    localStorage.getItem("dark-mode") === "enabled" ||
-    (!localStorage.getItem("dark-mode") && prefersDarkScheme.matches)
-  ) {
-    document.body.classList.add("dark-mode");
+// Cargar preferencia previa
+if (
+  localStorage.getItem("dark-mode") === "enabled" ||
+  (!localStorage.getItem("dark-mode") && prefersDarkScheme.matches)
+) {
+  document.body.classList.add("dark-mode");
+}
+
+darkModeToggle?.addEventListener("click", () => {
+  document.body.classList.toggle("dark-mode");
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("dark-mode", "enabled");
+  } else {
+    localStorage.setItem("dark-mode", "disabled");
   }
-
-  darkModeToggle?.addEventListener("click", () => {
-    document.body.classList.toggle("dark-mode");
-    if (document.body.classList.contains("dark-mode")) {
-      localStorage.setItem("dark-mode", "enabled");
-    } else {
-      localStorage.setItem("dark-mode", "disabled");
-    }
-  });
+});
 
 // === INICIALIZAR BADGE DEL CARRITO AL CARGAR ===
 actualizarNotificacionCarrito();
@@ -288,7 +288,6 @@ actualizarNotificacionCarrito();
 requestAnimationFrame(() => {
   document.body.classList.add("fade-in");
 });
-
 
 // === ANIMACIÓN FADE EN MAIN ===
 const main = document.querySelector("main");
